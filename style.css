@@ -58,6 +58,10 @@ body{
     justify-self: right;
     transition: 0.3s;
     border-radius: 0;
+    transition: 0.3s;
+}
+.addBtn:hover{
+    color: black;
 }
 #addInput{
     width: 70%;
