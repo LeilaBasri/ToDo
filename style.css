@@ -85,29 +85,39 @@ body{
     padding: 0;
 }
 .toDoList li{
+    position: relative;
     border: 1px solid black;
     width: 100%;
-    padding: 20px;
+    padding: 20px 40px;
     cursor: pointer;
     transition: 0.3s;
+
+    /* make the list items unselectable */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
-li:nth-child(odd){
-    background-color: rgba(255,255,255,.5) !important;
-}
+
+/* Set all odd list items to a different color (zebra-stripes) */
+.toDoList li:nth-child(odd) {
+    background: #eceaea;
+  }
+  
 .toDoList li:hover{
     background-color: rgba(0,0,0,.1);
 }
 .toDoList li.checked{
     background-color: rgba(0,0,0,.6);
-    text-decoration: overline;
+    text-decoration: line-through;
 }
 .toDoList li.checked::before {
     content: '';
     position: absolute;
-    border-color: #fff;
+    border-color: black;
     border-style: solid;
     border-width: 0 2px 2px 0;
-    top: 10px;
+    top: 25px;
     left: 16px;
     transform: rotate(45deg);
     height: 15px;
@@ -115,9 +125,9 @@ li:nth-child(odd){
   }
 .close{
     position: absolute;
-    right: 10px;
-    top: 40%;
-    color: rgba(255,255,255,.5);
+    right: 20px;
+    top: 20px;
+    color: rgba(0,0,0,.6);
 }
 .close:hover{
     color: black;
